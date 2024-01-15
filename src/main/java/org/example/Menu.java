@@ -69,8 +69,6 @@ public class Menu {
     }
 
     private void inicializarConexion() {
-        // Aquí debes implementar la lógica para inicializar la conexión a la base de datos
-        // Reemplaza con tus propios detalles de conexión a AWS RDS
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = Conexion.getUrl();
@@ -94,7 +92,7 @@ public class Menu {
 
     private void generarInformeCentro() {
         try {
-            JasperReport jasperReport = JasperCompileManager.compileReport("ruta_al_archivo_del_reporte_centro.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/reporteBBDD.jrxml");
             Map<String, Object> parametros = new HashMap<>();
             parametros.put("Conexion", conexion);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
@@ -106,9 +104,16 @@ public class Menu {
 
     private void generarInformeMedicosEspecialistas() {
         // Implementa la lógica para generar el informe de médicos especialistas aquí
+        // Puedes seguir un proceso similar al de generarInformeCentro
     }
 
     private void generarInformeCausasUrgencias() {
         // Implementa la lógica para generar el informe de causas de urgencias aquí
+        // Puedes seguir un proceso similar al de generarInformeCentro
+    }
+
+    public static void main(String[] args) {
+        Menu menu = new Menu();
+        menu.mostrarMenu();
     }
 }
