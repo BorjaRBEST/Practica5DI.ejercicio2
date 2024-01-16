@@ -10,36 +10,48 @@
 	<title>
 		<band height="132" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="0" width="180" height="70" uuid="b201121c-00de-40c8-8d46-1b63f3552db9"/>
+				<reportElement x="10" y="5" width="180" height="70" uuid="b201121c-00de-40c8-8d46-1b63f3552db9"/>
 				<imageExpression><![CDATA["https://www2.cruzroja.es/documents/5640665/729554361/Logo+CRE+nuevo.png/03ddc2f3-c47d-787e-504b-a9fcc4af0a0b?version=1.0&t=1619531834993&imagePreview=1"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="120" y="90" width="330" height="30" uuid="d924be7d-fb9d-420b-9a85-dc5aee38cd32"/>
+				<reportElement x="120" y="80" width="330" height="30" uuid="d924be7d-fb9d-420b-9a85-dc5aee38cd32"/>
 				<textElement textAlignment="Center">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[REPUBLICA INDEPENDIENTE DE MI CASA]]></text>
 			</staticText>
 			<image>
-				<reportElement x="440" y="5" width="109" height="60" uuid="422e858c-7f40-4e0c-912b-b67033d35421"/>
+				<reportElement x="430" y="10" width="109" height="60" uuid="422e858c-7f40-4e0c-912b-b67033d35421"/>
 				<imageExpression><![CDATA["https://static.vecteezy.com/system/resources/previews/009/687/793/original/american-flag-usa-flag-png.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="280" splitType="Stretch">
+			<subreport>
+				<reportElement x="20" y="50" width="200" height="200" uuid="ecddfa19-dd49-4c86-afdb-3a57efcdea9e"/>
+				<subreportParameter name="REPORT_CONNECTION">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CONNECTION}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["sub1.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="20" y="50" width="200" height="200" uuid="cfae3331-2f3e-4864-8029-272bf606d92c"/>
+				<textFieldExpression><![CDATA[$P{REPORT_CONTEXT}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="62" splitType="Stretch">
+			<textField>
+				<reportElement x="230" y="32" width="100" height="30" uuid="69348756-1dbc-41cf-bc2e-acb8babb0a69"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

@@ -1,6 +1,5 @@
 package org.example;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -92,7 +91,37 @@ public class Menu {
 
     private void generarInformeCentro() {
         try {
-            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/reporteBBDD.jrxml");
+            // Pedir la ID al usuario
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Ingrese la ID del centro de salud: ");
+            int id = scanner.nextInt();
+            scanner.nextLine();
+
+            // Compilar el informe principal
+            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/sub1.jrxml");
+
+            // Establecer los parámetros para el informe principal
+            Map<String, Object> parametros = new HashMap<>();
+            parametros.put("IDParametro", id);
+            parametros.put("Conexion", conexion);  // Pasar la conexión como parámetro
+
+            // Llenar el informe principal
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
+
+
+            // Ver el informe principal
+            JasperViewer.viewReport(jasperPrint);
+        } catch (java.util.InputMismatchException e) {
+            System.out.println("Entrada no válida. Debe ingresar un número.");
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void generarInformeMedicosEspecialistas() {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/(posible nombre)reporteMedicosEspecialistas.jrxml");
             Map<String, Object> parametros = new HashMap<>();
             parametros.put("Conexion", conexion);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
@@ -102,18 +131,15 @@ public class Menu {
         }
     }
 
-    private void generarInformeMedicosEspecialistas() {
-        // Implementa la lógica para generar el informe de médicos especialistas aquí
-        // Puedes seguir un proceso similar al de generarInformeCentro
-    }
-
     private void generarInformeCausasUrgencias() {
-        // Implementa la lógica para generar el informe de causas de urgencias aquí
-        // Puedes seguir un proceso similar al de generarInformeCentro
-    }
-
-    public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.mostrarMenu();
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/(posible nombre)reporteCausasUrgencias.jrxml");
+            Map<String, Object> parametros = new HashMap<>();
+            parametros.put("Conexion", conexion);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
+            JasperViewer.viewReport(jasperPrint);
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
     }
 }

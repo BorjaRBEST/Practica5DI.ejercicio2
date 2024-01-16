@@ -3,11 +3,13 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sub1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3cc21628-2a65-4776-a03e-4c564cd9c314">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AdaptadorBBDD.jrdax"/>
+	<parameter name="IDParametro" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
 		<![CDATA[SELECT ID, Nombre, Provincia, Municipio, Localidad, CP, Calle
 FROM centro_salud
-WHERE ID = 1
-]]>
+WHERE ID = $P{IDParametro}]]>
 	</queryString>
 	<field name="ID" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -51,22 +53,91 @@ WHERE ID = 1
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="5" width="180" height="70" uuid="a830ea63-a86d-48bb-9402-d30398610c90"/>
+				<imageExpression><![CDATA["https://www2.cruzroja.es/documents/5640665/729554361/Logo+CRE+nuevo.png/03ddc2f3-c47d-787e-504b-a9fcc4af0a0b?version=1.0&t=1619531834993&imagePreview=1"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="120" y="80" width="330" height="30" uuid="c68faaac-1aa6-477e-817e-09022315e915"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLICA INDEPENDIENTE DE MI CASA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="430" y="10" width="109" height="60" uuid="4c032e65-6a5a-40bb-93ce-6cbc9b4578d2"/>
+				<imageExpression><![CDATA["https://static.vecteezy.com/system/resources/previews/009/687/793/original/american-flag-usa-flag-png.png"]]></imageExpression>
+			</image>
+		</band>
 	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="310" splitType="Stretch">
+			<textField>
+				<reportElement x="150" y="10" width="100" height="30" uuid="a769d365-40b0-498d-b4da-066697b64eb8"/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="10" width="100" height="30" uuid="23a59c7b-02b5-4817-9390-b1857923ec9e"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="50" width="100" height="30" uuid="958cbf2e-5f32-40ee-98e5-4d5bfa33be5c"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="50" width="100" height="30" uuid="06c0bec9-eb7c-459f-9636-d689783aade6"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="90" width="100" height="30" uuid="fc21e315-1c00-4765-b234-f06c6dae3bfa"/>
+				<textFieldExpression><![CDATA[$F{Provincia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="90" width="100" height="30" uuid="1daa4840-050a-4b4f-8379-0ee2c00ce2d2"/>
+				<text><![CDATA[Provincia]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="130" width="100" height="30" uuid="043656a4-14e0-4279-b79b-30bb33ae037c"/>
+				<textFieldExpression><![CDATA[$F{Municipio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="130" width="100" height="30" uuid="08e4792a-2a98-48de-aba5-7db2aec1990b"/>
+				<text><![CDATA[Municipio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="170" width="100" height="30" uuid="8226899f-a0a0-4f43-8f66-ab92d13c8ae2"/>
+				<textFieldExpression><![CDATA[$F{Localidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="170" width="100" height="30" uuid="f8e723fe-d187-4db7-9d6c-890cb2d1bb8b"/>
+				<text><![CDATA[Localidad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="210" width="100" height="30" uuid="82912058-8d88-4e7c-b6cc-089be3221a3b"/>
+				<textFieldExpression><![CDATA[$F{CP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="210" width="100" height="30" uuid="8477c83e-b744-4138-943d-571d7b7e54ce"/>
+				<text><![CDATA[CP]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="250" width="100" height="30" uuid="f9e13dce-41a8-4c7f-859b-e775d6cd923b"/>
+				<textFieldExpression><![CDATA[$F{Calle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="250" width="100" height="30" uuid="8d7be0e5-f26e-428f-95a9-34ca2cd77e06"/>
+				<text><![CDATA[Calle]]></text>
+			</staticText>
+		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="43" width="100" height="30" uuid="3302b0cb-9a93-401b-95a1-b9e8ae13927d"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
