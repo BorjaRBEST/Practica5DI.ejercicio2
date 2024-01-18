@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243da61e-6efd-49d5-8679-4b33db8d3f78" name="Changes" comment="Nuevos cambios, código sigue sin funcionar">
+    <list default="true" id="243da61e-6efd-49d5-8679-4b33db8d3f78" name="Changes" comment="Nuevos cambios, código funciona, a esperas de terminar el reporte">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +74,7 @@
       <updated>1705317926625</updated>
       <workItem from="1705317927687" duration="21350000" />
       <workItem from="1705577186689" duration="12000" />
+      <workItem from="1705577681507" duration="2906000" />
     </task>
     <task id="LOCAL-00001" summary="Commit incial">
       <option name="closed" value="true" />
@@ -107,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705412582688</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Nuevos cambios, código funciona, a esperas de terminar el reporte">
+      <option name="closed" value="true" />
+      <created>1705577985410</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705577985410</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +127,7 @@
     <MESSAGE value="Commit incial" />
     <MESSAGE value="Se agrega clase Conexion, nos conectamos a BBDD, agregamos menú para obtener diferentes subinformes" />
     <MESSAGE value="Nuevos cambios, código sigue sin funcionar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nuevos cambios, código sigue sin funcionar" />
+    <MESSAGE value="Nuevos cambios, código funciona, a esperas de terminar el reporte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nuevos cambios, código funciona, a esperas de terminar el reporte" />
   </component>
 </project>
