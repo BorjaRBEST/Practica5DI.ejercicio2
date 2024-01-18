@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sub2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="80903a36-95fc-48e0-a5f0-20fd4f11df01">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AdaptadorBBDD.jrdax"/>
+	<parameter name="id" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT especialidad, COUNT(*) AS cantidad_medicos
+FROM medicos_especialistas 
+GROUP BY especialidad]]>
+	</queryString>
+	<field name="especialidad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="especialidad"/>
+		<property name="com.jaspersoft.studio.field.label" value="especialidad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="medicos_especialistas"/>
+	</field>
+	<field name="cantidad_medicos" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="cantidad_medicos"/>
+		<property name="com.jaspersoft.studio.field.label" value="cantidad_medicos"/>
+	</field>
+	<group name="especialidad">
+		<groupExpression><![CDATA[$F{especialidad}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="245" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="190" y="30" width="200" height="200" uuid="35a4e470-2ba8-48f8-86ce-422bb78221dc"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{especialidad}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{cantidad_medicos}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

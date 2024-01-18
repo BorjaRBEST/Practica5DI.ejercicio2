@@ -1,18 +1,14 @@
 package org.example;
 
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
 
 public class Menu {
 
@@ -25,24 +21,16 @@ public class Menu {
 
     public void mostrarMenu() {
         System.out.println("Seleccione una opción:");
-        System.out.println("1. Subinforme con los datos del centro");
-        System.out.println("2. Subinforme con médicos especialistas");
-        System.out.println("3. Subinforme gráfico circular de causas de urgencias");
-        System.out.println("4. Salir");
+        System.out.println("1. Lanzar informe");
+        System.out.println("2. Salir");
 
         int opcion = obtenerOpcionUsuario();
 
         switch (opcion) {
             case 1:
-                generarInformeCentro();
+                generarInforme();
                 break;
             case 2:
-                generarInformeMedicosEspecialistas();
-                break;
-            case 3:
-                generarInformeCausasUrgencias();
-                break;
-            case 4:
                 cerrarConexion();
                 System.out.println("Saliendo...");
                 System.exit(0);
@@ -89,54 +77,19 @@ public class Menu {
         }
     }
 
-    private void generarInformeCentro() {
+    private void generarInforme() {
         try {
-            // Pedir la ID al usuario
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Ingrese la ID del centro de salud: ");
-            int id = scanner.nextInt();
-            scanner.nextLine();
+            // Compilar el informe
+            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/1.jrxml");
 
-            // Compilar el informe principal
-            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/sub1.jrxml");
-
-            // Establecer los parámetros para el informe principal
-            Map<String, Object> parametros = new HashMap<>();
-            parametros.put("IDParametro", id);
-            parametros.put("Conexion", conexion);  // Pasar la conexión como parámetro
-
-            // Llenar el informe principal
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
-
-
-            // Ver el informe principal
-            JasperViewer.viewReport(jasperPrint);
-        } catch (java.util.InputMismatchException e) {
-            System.out.println("Entrada no válida. Debe ingresar un número.");
-        } catch (JRException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    private void generarInformeMedicosEspecialistas() {
-        try {
-            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/(posible nombre)reporteMedicosEspecialistas.jrxml");
+            // Establecer los parámetros para el informe
             Map<String, Object> parametros = new HashMap<>();
             parametros.put("Conexion", conexion);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
-            JasperViewer.viewReport(jasperPrint);
-        } catch (JRException e) {
-            e.printStackTrace();
-        }
-    }
 
-    private void generarInformeCausasUrgencias() {
-        try {
-            JasperReport jasperReport = JasperCompileManager.compileReport("src/main/resources/(posible nombre)reporteCausasUrgencias.jrxml");
-            Map<String, Object> parametros = new HashMap<>();
-            parametros.put("Conexion", conexion);
+            // Llenar el informe
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
+
+            // Mostrar el informe en una ventana de visualización
             JasperViewer.viewReport(jasperPrint);
         } catch (JRException e) {
             e.printStackTrace();

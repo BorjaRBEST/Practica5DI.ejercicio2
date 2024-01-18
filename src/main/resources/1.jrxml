@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="360eb7de-c9f3-4653-869a-a4c4dab2787f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AdaptadorBBDD.jrdax"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT ID, nombre, provincia, municipio, localidad, cp, calle
+        FROM centro_salud
+        WHERE ID = 1]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="centro_salud"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="centro_salud"/>
+	</field>
+	<field name="provincia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="provincia"/>
+		<property name="com.jaspersoft.studio.field.label" value="provincia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="centro_salud"/>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="municipio"/>
+		<property name="com.jaspersoft.studio.field.label" value="municipio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="centro_salud"/>
+	</field>
+	<field name="localidad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="localidad"/>
+		<property name="com.jaspersoft.studio.field.label" value="localidad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="centro_salud"/>
+	</field>
+	<field name="cp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cp"/>
+		<property name="com.jaspersoft.studio.field.label" value="cp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="centro_salud"/>
+	</field>
+	<field name="calle" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="calle"/>
+		<property name="com.jaspersoft.studio.field.label" value="calle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="centro_salud"/>
+	</field>
+	<group name="ID">
+		<groupExpression><![CDATA[$F{ID}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="5" width="180" height="70" uuid="bffa1d70-6185-4dac-99db-7991c989339e"/>
+				<imageExpression><![CDATA["https://www2.cruzroja.es/documents/5640665/729554361/Logo+CRE+nuevo.png/03ddc2f3-c47d-787e-504b-a9fcc4af0a0b?version=1.0&t=1619531834993&imagePreview=1"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="120" y="80" width="330" height="30" uuid="a2074f21-072e-402d-914a-1cf21bdc1a8f"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLICA INDEPENDIENTE DE MI CASA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="430" y="10" width="109" height="60" uuid="3732ed82-a56d-4a25-89a0-39a215764f1a"/>
+				<imageExpression><![CDATA["https://static.vecteezy.com/system/resources/previews/009/687/793/original/american-flag-usa-flag-png.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="285" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="550" height="100" uuid="da5f03a0-3e88-453d-8ed6-e25d921f2ba3"/>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["sub1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="64" splitType="Stretch">
+			<textField>
+				<reportElement x="475" y="30" width="100" height="30" uuid="9d417776-ca8a-4d33-82c0-aa58b882563e"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
