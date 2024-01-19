@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="243da61e-6efd-49d5-8679-4b33db8d3f78" name="Changes" comment="Nuevos cambios, código funciona, a esperas de terminar el reporte">
+    <list default="true" id="243da61e-6efd-49d5-8679-4b33db8d3f78" name="Changes" comment="Cambios finales del proyecto">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/informe.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/subreporte2.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/subreporte2.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/1.jasper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/1.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/1.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sub2.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sub2.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sub2.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sub2.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sub3.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sub3.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sub3.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sub3.jrxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +84,8 @@
       <updated>1705317926625</updated>
       <workItem from="1705317927687" duration="21350000" />
       <workItem from="1705577186689" duration="12000" />
-      <workItem from="1705577681507" duration="2906000" />
+      <workItem from="1705577681507" duration="4784000" />
+      <workItem from="1705646065380" duration="3635000" />
     </task>
     <task id="LOCAL-00001" summary="Commit incial">
       <option name="closed" value="true" />
@@ -116,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705577985410</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Cambios finales del proyecto">
+      <option name="closed" value="true" />
+      <created>1705585359494</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705585359494</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +147,17 @@
     <MESSAGE value="Se agrega clase Conexion, nos conectamos a BBDD, agregamos menú para obtener diferentes subinformes" />
     <MESSAGE value="Nuevos cambios, código sigue sin funcionar" />
     <MESSAGE value="Nuevos cambios, código funciona, a esperas de terminar el reporte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nuevos cambios, código funciona, a esperas de terminar el reporte" />
+    <MESSAGE value="Cambios finales del proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios finales del proyecto" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

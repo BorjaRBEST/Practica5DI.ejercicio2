@@ -69,7 +69,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="492" splitType="Stretch">
+		<band height="447" splitType="Stretch">
 			<subreport>
 				<reportElement x="0" y="0" width="550" height="40" uuid="da5f03a0-3e88-453d-8ed6-e25d921f2ba3"/>
 				<subreportParameter name="id">
@@ -77,16 +77,6 @@
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA["sub1.jasper"]]></subreportExpression>
-			</subreport>
-			<subreport>
-				<reportElement x="-10" y="50" width="580" height="110" uuid="d8ef0bd4-5a9f-4d0e-b08f-9b554ccdf698"/>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["sub2.jasper"]]></subreportExpression>
-			</subreport>
-			<subreport>
-				<reportElement x="0" y="340" width="280" height="150" uuid="7220c5eb-402c-430d-9c92-8ef3a0cb40d9"/>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["sub3.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

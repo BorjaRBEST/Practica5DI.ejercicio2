@@ -89,10 +89,13 @@ public class Menu {
             // Llenar el informe
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
 
-            // Mostrar el informe en una ventana de visualización
-            JasperViewer.viewReport(jasperPrint);
+            // Exportar el informe a PDF
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "src/main/resources/informe.pdf");
+
+            System.out.println("Informe generado exitosamente en src/main/resources/informe.pdf");
         } catch (JRException e) {
             e.printStackTrace();
         }
     }
+
 }
